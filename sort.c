@@ -26,7 +26,7 @@ void insertionsort(void *array,
 
 {
 	for (int i = 0; i < nitems; i++) {
-		for (int j = i; j < nitems; j++) {
+		for (int j = 0; j < nitems; j++) {
 			void * item1 = array + (i * size);
 			void * item2 = array + (j * size);
 			if (CompareFunc(item1, item2) >0) {
