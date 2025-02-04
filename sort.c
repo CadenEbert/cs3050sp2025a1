@@ -25,15 +25,14 @@ void insertionsort(void *array,
 				int (*CompareFunc)(const void *, const void*))
 
 {
-	for (int i = 0; i < size; i++) {
-		int start = 0;
-		for (int j = i; j < size; j++) {
-			void * item1 = array + j * size;
-			void * item2 = array + (start + 1) * size;
+	for (int i = 0; i < nitems; i++) {
+		for (int j = i; j < nitems; j++) {
+			void * item1 = array + (i * size);
+			void * item2 = array + (j * size);
 			if (CompareFunc(item1, item2) >0) {
 				Swap(item1, item2, size);
 			}
-			start++;
+			
 
 		}
 	}
